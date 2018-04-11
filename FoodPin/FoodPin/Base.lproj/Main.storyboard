@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantTableCell" rowHeight="324" id="eZm-ew-i7m" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="324"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantTableCell" rowHeight="320" id="eZm-ew-i7m" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZm-ew-i7m" id="sH9-OM-d7I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="food" image="barrafina" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QB-x7-2og">
@@ -32,7 +32,7 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xq7-nq-6OU">
-                                            <rect key="frame" x="20" y="260" width="335" height="53.5"/>
+                                            <rect key="frame" x="20" y="260" width="335" height="54.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ae6-DE-fgo">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
@@ -51,20 +51,30 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-iR-VmN">
-                                                    <rect key="frame" x="0.0" y="25.5" width="335" height="28"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="63G-h0-Ljq">
+                                                    <rect key="frame" x="0.0" y="25.5" width="335" height="29"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-iR-VmN">
+                                                            <rect key="frame" x="0.0" y="0.0" width="315" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-e2-PRO">
+                                                            <rect key="frame" x="315" y="0.0" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="P2K-eD-OOA"/>
+                                                                <constraint firstAttribute="width" constant="20" id="mq7-7n-pA4"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ae6-DE-fgo" firstAttribute="leading" secondItem="Xq7-nq-6OU" secondAttribute="leading" id="69R-os-0S9"/>
-                                                <constraint firstItem="Rmb-iR-VmN" firstAttribute="leading" secondItem="Xq7-nq-6OU" secondAttribute="leading" id="Esc-Jz-Cs8"/>
-                                                <constraint firstAttribute="trailing" secondItem="Rmb-iR-VmN" secondAttribute="trailing" id="TNg-ih-foZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Rmb-iR-VmN" secondAttribute="bottom" id="hja-lU-m6q"/>
                                                 <constraint firstItem="Ae6-DE-fgo" firstAttribute="top" secondItem="Xq7-nq-6OU" secondAttribute="top" id="mLY-Ed-sdp"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ae6-DE-fgo" secondAttribute="trailing" id="qnP-07-VRy"/>
+                                                <constraint firstItem="63G-h0-Ljq" firstAttribute="width" secondItem="Ae6-DE-fgo" secondAttribute="width" id="wwg-at-dGk"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -72,7 +82,7 @@
                                         <constraint firstAttribute="trailing" secondItem="Xq7-nq-6OU" secondAttribute="trailing" constant="20" symbolic="YES" id="60g-eg-jL2"/>
                                         <constraint firstItem="Xq7-nq-6OU" firstAttribute="top" secondItem="4QB-x7-2og" secondAttribute="bottom" constant="10" id="B3e-gq-1YH"/>
                                         <constraint firstItem="4QB-x7-2og" firstAttribute="top" secondItem="sH9-OM-d7I" secondAttribute="top" id="eyr-At-Y3n"/>
-                                        <constraint firstAttribute="bottom" secondItem="Xq7-nq-6OU" secondAttribute="bottom" constant="10" id="fwF-Ih-qsX"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xq7-nq-6OU" secondAttribute="bottom" constant="5" id="fwF-Ih-qsX"/>
                                         <constraint firstItem="4QB-x7-2og" firstAttribute="leading" secondItem="sH9-OM-d7I" secondAttribute="leading" id="hhz-e7-bPw"/>
                                         <constraint firstItem="Xq7-nq-6OU" firstAttribute="leading" secondItem="sH9-OM-d7I" secondAttribute="leading" constant="20" symbolic="YES" id="i6e-Rm-zcV"/>
                                         <constraint firstAttribute="trailing" secondItem="4QB-x7-2og" secondAttribute="trailing" id="xPy-7j-9cV"/>
@@ -80,6 +90,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="food" destination="4QB-x7-2og" id="DqM-e3-UYC"/>
+                                    <outlet property="heart" destination="NyZ-e2-PRO" id="ESA-3q-yU9"/>
                                     <outlet property="location" destination="5MI-NB-5if" id="weI-1H-t3Z"/>
                                     <outlet property="name" destination="oGd-7g-4MC" id="HCR-Lh-IvQ"/>
                                     <outlet property="type" destination="Rmb-iR-VmN" id="W0L-Ld-4X7"/>
@@ -99,5 +110,6 @@
     </scenes>
     <resources>
         <image name="barrafina" width="480" height="480"/>
+        <image name="heart-tick" width="22" height="21"/>
     </resources>
 </document>
