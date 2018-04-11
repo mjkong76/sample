@@ -14,28 +14,17 @@ class RestaurantTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return restaurant.names.count
     }
 
@@ -46,6 +35,7 @@ class RestaurantTableViewController: UITableViewController {
         cell.name.text = restaurant.names[indexPath.item]
         cell.location.text = restaurant.locations[indexPath.item]
         cell.type.text = restaurant.types[indexPath.item]
+        cell.heart.isHidden = restaurant.checkin[indexPath.row] ? false : true
         
         return cell
     }
@@ -59,65 +49,36 @@ class RestaurantTableViewController: UITableViewController {
         optionMenu.addAction(cancelAction)
         
         // add call action
-        let callActionHandler = { (action: UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable",
-                                                 message: "Sorry, the call feature is not available yet. Please retry later",
-                                                 preferredStyle: .alert)
+        let callAction = UIAlertAction(title: "Call" + "123-000-\(indexPath.row)", style: .default, handler: { (action: UIAlertAction!) in
+            // behavior implement
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later", preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertMessage, animated: true, completion: nil)
-        }
-        let callAction = UIAlertAction(title: "Call" + "123-000-\(indexPath.row)",
-                                       style: .default,
-                                       handler: callActionHandler)
+        })
         optionMenu.addAction(callAction)
+        
+        // add checkin action
+        var alertTitle = "Check in"
+        if self.restaurant.checkin[indexPath.row] {
+            alertTitle = "Undo Check in"
+        }
+        let checkinAction = UIAlertAction(title: alertTitle, style: .default, handler: { (action: UIAlertAction!) in
+            // behavior implement
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+            if self.restaurant.checkin[indexPath.row] {
+                cell.heart.isHidden = true
+                self.restaurant.checkin[indexPath.row] = false
+            } else {
+                cell.heart.isHidden = false
+                self.restaurant.checkin[indexPath.row] = true
+            }
+        })
+        optionMenu.addAction(checkinAction)
         
         // display menu
         present(optionMenu, animated: true, completion: nil)
+        
+        // deselect the row
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
