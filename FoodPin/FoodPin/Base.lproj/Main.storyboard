@@ -38,13 +38,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGd-7g-4MC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="271" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="296.5" height="30"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MI-NB-5if">
-                                                            <rect key="frame" x="276" y="0.0" width="59" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MI-NB-5if">
+                                                            <rect key="frame" x="301.5" y="0.0" width="33.5" height="30"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="63G-h0-Ljq">
                                                     <rect key="frame" x="0.0" y="35" width="335" height="25"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-iR-VmN">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-iR-VmN">
                                                             <rect key="frame" x="0.0" y="0.0" width="315" height="18"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,9 +93,9 @@
                                 <connections>
                                     <outlet property="food" destination="4QB-x7-2og" id="DqM-e3-UYC"/>
                                     <outlet property="heart" destination="NyZ-e2-PRO" id="ESA-3q-yU9"/>
-                                    <outlet property="location" destination="5MI-NB-5if" id="weI-1H-t3Z"/>
+                                    <outlet property="location" destination="Rmb-iR-VmN" id="bph-sr-Um2"/>
                                     <outlet property="name" destination="oGd-7g-4MC" id="HCR-Lh-IvQ"/>
-                                    <outlet property="type" destination="Rmb-iR-VmN" id="W0L-Ld-4X7"/>
+                                    <outlet property="type" destination="5MI-NB-5if" id="7bP-tn-RJi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
