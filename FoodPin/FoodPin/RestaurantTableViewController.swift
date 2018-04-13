@@ -11,6 +11,7 @@ import UIKit
 class RestaurantTableViewController: UITableViewController {
     
     let restaurant = Restaurant()
+    var dictionary: [Int: IndexPath] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
+        return 360
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RestaurantTableViewCell {
@@ -40,11 +41,15 @@ class RestaurantTableViewController: UITableViewController {
         cell.location.text = restaurant.locations[indexPath.item]
         cell.type.text = restaurant.types[indexPath.item]
         cell.heart.isHidden = restaurant.checkin[indexPath.row] ? false : true
+        cell.more.tag = indexPath.row
+        dictionary[indexPath.row] = indexPath
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @IBAction func moreAction(_ sender: Any) {
+        let button = sender as! UIButton
+        
         // create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .alert)
         
@@ -54,33 +59,33 @@ class RestaurantTableViewController: UITableViewController {
         
         // add call action
         optionMenu.addAction(UIAlertAction(
-            title: "Call" + "123-000-\(indexPath.row)",
+            title: "Call" + "123-000-\(button.tag)",
             style: .default,
             handler: { (action: UIAlertAction!) in
-            // behavior implement
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
+                // behavior implement
+                let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later", preferredStyle: .alert)
+                alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertMessage, animated: true, completion: nil)
         }))
         
         // add checkin action
         var alertTitle = "Check in"
-        if self.restaurant.checkin[indexPath.row] {
+        if self.restaurant.checkin[button.tag] {
             alertTitle = "Undo Check in"
         }
         optionMenu.addAction(UIAlertAction(
             title: alertTitle,
             style: .default,
             handler: { (action: UIAlertAction!) in
-            // behavior implement
-            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
-            if self.restaurant.checkin[indexPath.row] {
-                cell.heart.isHidden = true
-                self.restaurant.checkin[indexPath.row] = false
-            } else {
-                cell.heart.isHidden = false
-                self.restaurant.checkin[indexPath.row] = true
-            }
+                // behavior implement
+                let cell = self.tableView.cellForRow(at: self.dictionary[button.tag]!) as! RestaurantTableViewCell
+                if self.restaurant.checkin[button.tag] {
+                    self.restaurant.checkin[button.tag] = false
+                    cell.heart.isHidden = true
+                } else {
+                    self.restaurant.checkin[button.tag] = true
+                    cell.heart.isHidden = false
+                }
         }))
         
         // add delete action
@@ -95,8 +100,8 @@ class RestaurantTableViewController: UITableViewController {
             title: "Share",
             style: .default,
             handler: { (action: UIAlertAction) in
-                let defaultText = "Just checking in at " + self.restaurant.names[indexPath.row]
-                if let image = UIImage.init(named: self.restaurant.images[indexPath.row]) {
+                let defaultText = "Just checking in at " + self.restaurant.names[button.tag]
+                if let image = UIImage.init(named: self.restaurant.images[button.tag]) {
                     let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
                     self.present(activityController, animated: true, completion: nil)
                 } else {
@@ -107,8 +112,5 @@ class RestaurantTableViewController: UITableViewController {
         
         // display menu
         present(optionMenu, animated: true, completion: nil)
-        
-        // deselect the row
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
