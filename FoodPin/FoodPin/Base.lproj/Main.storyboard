@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,18 +30,18 @@
                                             <rect key="frame" x="5" y="0.0" width="365" height="359.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l4J-dC-Nab">
-                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="39.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="37.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cafe Deadend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M50-KS-DYr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="37.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJT-i7-GvT">
-                                                            <rect key="frame" x="345" y="0.0" width="20" height="39.5"/>
+                                                            <rect key="frame" x="340" y="0.0" width="25" height="37.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="pyg-ck-Mkv"/>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="25" id="pyg-ck-Mkv"/>
                                                             </constraints>
                                                             <state key="normal" title="Button" image="more"/>
                                                             <connections>
@@ -50,39 +51,44 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafedeadend" translatesAutoresizingMaskIntoConstraints="NO" id="tcW-GJ-AmR">
-                                                    <rect key="frame" x="0.0" y="44.5" width="365" height="250"/>
+                                                    <rect key="frame" x="0.0" y="42.5" width="365" height="250"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="z7T-xm-a8W"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-qh-Awx">
-                                                    <rect key="frame" x="0.0" y="299.5" width="365" height="60"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ofj-gT-c6b">
+                                                    <rect key="frame" x="0.0" y="297.5" width="365" height="62"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T7K-KJ-S0Y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="21"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-qh-Awx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="332" height="62"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="G/F, 72 Po Hing Fong, Share..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOJ-tO-9Ol">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="328" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Shop B, G/F, 22-24A Tai Ping San StreeShopShop B, G/F, 22-24A Tai Ping San StreeShop" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOJ-tO-9Ol">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="44"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="DsO-Gi-ECP">
-                                                                    <rect key="frame" x="338" y="0.0" width="22" height="21"/>
-                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee &amp; Tea Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhC-uj-nXk">
+                                                                    <rect key="frame" x="0.0" y="44" width="332" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="rhC-uj-nXk" firstAttribute="width" secondItem="MOJ-tO-9Ol" secondAttribute="width" id="CGq-xg-umJ"/>
+                                                                <constraint firstItem="MOJ-tO-9Ol" firstAttribute="width" secondItem="Th9-qh-Awx" secondAttribute="width" id="KlL-LS-qUJ"/>
+                                                            </constraints>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee &amp; Tea Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhC-uj-nXk">
-                                                            <rect key="frame" x="0.0" y="21" width="360" height="39"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="4hL-RH-jJt">
+                                                            <rect key="frame" x="340" y="0.0" width="25" height="62"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="Sci-lt-prB"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="T7K-KJ-S0Y" secondAttribute="trailing" constant="5" id="QNt-ze-QKx"/>
-                                                        <constraint firstItem="rhC-uj-nXk" firstAttribute="width" secondItem="T7K-KJ-S0Y" secondAttribute="width" id="oMa-kD-io3"/>
-                                                        <constraint firstAttribute="height" constant="60" id="xS5-o8-uIv"/>
+                                                        <constraint firstAttribute="height" constant="62" id="7pv-pA-oNC"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -97,7 +103,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="food" destination="tcW-GJ-AmR" id="gab-R0-lBF"/>
-                                    <outlet property="heart" destination="DsO-Gi-ECP" id="fzs-NE-Sks"/>
+                                    <outlet property="heart" destination="4hL-RH-jJt" id="KgO-0N-WlI"/>
                                     <outlet property="location" destination="MOJ-tO-9Ol" id="thV-gz-fQr"/>
                                     <outlet property="more" destination="HJT-i7-GvT" id="2w0-Cx-lq0"/>
                                     <outlet property="name" destination="M50-KS-DYr" id="xcV-qH-tsu"/>

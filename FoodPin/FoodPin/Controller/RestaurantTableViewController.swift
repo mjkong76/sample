@@ -10,7 +10,7 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
-    let restaurant = Restaurant()
+    let restaurants = DummyRestaurant().restaurants
     var dictionary: [Int: IndexPath] = [:]
 
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurant.names.count
+        return restaurants.count
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -36,15 +36,19 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RestaurantTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantTableCell", for: indexPath) as! RestaurantTableViewCell
 
-        cell.food.image = UIImage.init(named: restaurant.images[indexPath.item])!
-        cell.name.text = restaurant.names[indexPath.item]
-        cell.location.text = restaurant.locations[indexPath.item]
-        cell.type.text = restaurant.types[indexPath.item]
-        cell.heart.isHidden = restaurant.checkin[indexPath.row] ? false : true
+        cell.food.image = UIImage.init(named: restaurants[indexPath.item].image)!
+        cell.name.text = restaurants[indexPath.item].name
+        cell.location.text = restaurants[indexPath.item].location
+        cell.type.text = restaurants[indexPath.item].type
+        cell.heart.isHidden = restaurants[indexPath.row].isVisited ? false : true
         cell.more.tag = indexPath.row
         dictionary[indexPath.row] = indexPath
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func moreAction(_ sender: Any) {
@@ -70,7 +74,7 @@ class RestaurantTableViewController: UITableViewController {
         
         // add checkin action
         var alertTitle = "Check in"
-        if self.restaurant.checkin[button.tag] {
+        if self.restaurants[button.tag].isVisited {
             alertTitle = "Undo Check in"
         }
         optionMenu.addAction(UIAlertAction(
@@ -79,11 +83,11 @@ class RestaurantTableViewController: UITableViewController {
             handler: { (action: UIAlertAction!) in
                 // behavior implement
                 let cell = self.tableView.cellForRow(at: self.dictionary[button.tag]!) as! RestaurantTableViewCell
-                if self.restaurant.checkin[button.tag] {
-                    self.restaurant.checkin[button.tag] = false
+                if self.restaurants[button.tag].isVisited {
+                    self.restaurants[button.tag].isVisited = false
                     cell.heart.isHidden = true
                 } else {
-                    self.restaurant.checkin[button.tag] = true
+                    self.restaurants[button.tag].isVisited = true
                     cell.heart.isHidden = false
                 }
         }))
@@ -100,8 +104,8 @@ class RestaurantTableViewController: UITableViewController {
             title: "Share",
             style: .default,
             handler: { (action: UIAlertAction) in
-                let defaultText = "Just checking in at " + self.restaurant.names[button.tag]
-                if let image = UIImage.init(named: self.restaurant.images[button.tag]) {
+                let defaultText = "Just checking in at " + self.restaurants[button.tag].name
+                if let image = UIImage.init(named: self.restaurants[button.tag].image) {
                     let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
                     self.present(activityController, animated: true, completion: nil)
                 } else {
