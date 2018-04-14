@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aed-wF-02k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UAw-Cf-IKp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant Table View Controller-->
+        <!--FoodPin-->
         <scene sceneID="6t9-1N-tzc">
             <objects>
                 <tableViewController id="Aed-wF-02k" customClass="RestaurantTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,45 +19,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantTableCell" rowHeight="320" id="eZm-ew-i7m" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="320"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantTableCell" rowHeight="360" id="eZm-ew-i7m" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="360"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZm-ew-i7m" id="sH9-OM-d7I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="319.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="359.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="food" image="barrafina" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QB-x7-2og">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="250" id="aFa-ah-N1S"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xq7-nq-6OU">
-                                            <rect key="frame" x="20" y="255" width="335" height="60"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uVi-vj-fuz">
+                                            <rect key="frame" x="5" y="0.0" width="365" height="359.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ae6-DE-fgo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l4J-dC-Nab">
+                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="37.5"/>
                                                     <subviews>
+<<<<<<< HEAD
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGd-7g-4MC">
                                                             <rect key="frame" x="0.0" y="0.0" width="296.5" height="30"/>
+=======
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cafe Deadend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M50-KS-DYr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="37.5"/>
+>>>>>>> Chapter11
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+<<<<<<< HEAD
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MI-NB-5if">
                                                             <rect key="frame" x="301.5" y="0.0" width="33.5" height="30"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+=======
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJT-i7-GvT">
+                                                            <rect key="frame" x="340" y="0.0" width="25" height="37.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="25" id="pyg-ck-Mkv"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="more"/>
+                                                            <connections>
+                                                                <action selector="moreAction:" destination="Aed-wF-02k" eventType="touchUpInside" id="5E4-A7-L9J"/>
+                                                            </connections>
+                                                        </button>
+>>>>>>> Chapter11
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="nS1-zi-Gdx"/>
-                                                    </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="63G-h0-Ljq">
-                                                    <rect key="frame" x="0.0" y="35" width="335" height="25"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafedeadend" translatesAutoresizingMaskIntoConstraints="NO" id="tcW-GJ-AmR">
+                                                    <rect key="frame" x="0.0" y="42.5" width="365" height="250"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="250" id="z7T-xm-a8W"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ofj-gT-c6b">
+                                                    <rect key="frame" x="0.0" y="297.5" width="365" height="62"/>
                                                     <subviews>
+<<<<<<< HEAD
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-iR-VmN">
                                                             <rect key="frame" x="0.0" y="0.0" width="315" height="18"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -65,37 +82,65 @@
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-e2-PRO">
                                                             <rect key="frame" x="315" y="0.0" width="20" height="20"/>
+=======
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-qh-Awx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="332" height="62"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Shop B, G/F, 22-24A Tai Ping San StreeShopShop B, G/F, 22-24A Tai Ping San StreeShop" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOJ-tO-9Ol">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="44"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee &amp; Tea Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhC-uj-nXk">
+                                                                    <rect key="frame" x="0.0" y="44" width="332" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+>>>>>>> Chapter11
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="P2K-eD-OOA"/>
-                                                                <constraint firstAttribute="width" constant="20" id="mq7-7n-pA4"/>
+                                                                <constraint firstItem="rhC-uj-nXk" firstAttribute="width" secondItem="MOJ-tO-9Ol" secondAttribute="width" id="CGq-xg-umJ"/>
+                                                                <constraint firstItem="MOJ-tO-9Ol" firstAttribute="width" secondItem="Th9-qh-Awx" secondAttribute="width" id="KlL-LS-qUJ"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="4hL-RH-jJt">
+                                                            <rect key="frame" x="340" y="0.0" width="25" height="62"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="Sci-lt-prB"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="62" id="7pv-pA-oNC"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Ae6-DE-fgo" firstAttribute="leading" secondItem="Xq7-nq-6OU" secondAttribute="leading" id="69R-os-0S9"/>
-                                                <constraint firstAttribute="height" constant="60" id="Kpz-GW-AvR"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ae6-DE-fgo" secondAttribute="trailing" id="qnP-07-VRy"/>
-                                                <constraint firstItem="63G-h0-Ljq" firstAttribute="width" secondItem="Ae6-DE-fgo" secondAttribute="width" id="wwg-at-dGk"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Xq7-nq-6OU" secondAttribute="trailing" constant="20" symbolic="YES" id="60g-eg-jL2"/>
-                                        <constraint firstItem="Xq7-nq-6OU" firstAttribute="top" secondItem="4QB-x7-2og" secondAttribute="bottom" constant="5" id="B3e-gq-1YH"/>
-                                        <constraint firstItem="4QB-x7-2og" firstAttribute="top" secondItem="sH9-OM-d7I" secondAttribute="top" id="eyr-At-Y3n"/>
-                                        <constraint firstItem="4QB-x7-2og" firstAttribute="leading" secondItem="sH9-OM-d7I" secondAttribute="leading" id="hhz-e7-bPw"/>
-                                        <constraint firstItem="Xq7-nq-6OU" firstAttribute="leading" secondItem="sH9-OM-d7I" secondAttribute="leading" constant="20" symbolic="YES" id="i6e-Rm-zcV"/>
-                                        <constraint firstAttribute="trailing" secondItem="4QB-x7-2og" secondAttribute="trailing" id="xPy-7j-9cV"/>
+                                        <constraint firstAttribute="trailing" secondItem="uVi-vj-fuz" secondAttribute="trailing" constant="5" id="3CP-GD-a4U"/>
+                                        <constraint firstItem="uVi-vj-fuz" firstAttribute="top" secondItem="sH9-OM-d7I" secondAttribute="top" id="K4t-6J-oVb"/>
+                                        <constraint firstAttribute="bottom" secondItem="uVi-vj-fuz" secondAttribute="bottom" id="cY4-ws-pPZ"/>
+                                        <constraint firstItem="uVi-vj-fuz" firstAttribute="leading" secondItem="sH9-OM-d7I" secondAttribute="leading" constant="5" id="qIb-84-7AR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+<<<<<<< HEAD
                                     <outlet property="food" destination="4QB-x7-2og" id="DqM-e3-UYC"/>
                                     <outlet property="heart" destination="NyZ-e2-PRO" id="ESA-3q-yU9"/>
                                     <outlet property="location" destination="Rmb-iR-VmN" id="bph-sr-Um2"/>
                                     <outlet property="name" destination="oGd-7g-4MC" id="HCR-Lh-IvQ"/>
                                     <outlet property="type" destination="5MI-NB-5if" id="7bP-tn-RJi"/>
+=======
+                                    <outlet property="food" destination="tcW-GJ-AmR" id="gab-R0-lBF"/>
+                                    <outlet property="heart" destination="4hL-RH-jJt" id="KgO-0N-WlI"/>
+                                    <outlet property="location" destination="MOJ-tO-9Ol" id="thV-gz-fQr"/>
+                                    <outlet property="more" destination="HJT-i7-GvT" id="2w0-Cx-lq0"/>
+                                    <outlet property="name" destination="M50-KS-DYr" id="xcV-qH-tsu"/>
+                                    <outlet property="type" destination="rhC-uj-nXk" id="UqR-Qf-2pr"/>
+>>>>>>> Chapter11
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -104,14 +149,34 @@
                             <outlet property="delegate" destination="Aed-wF-02k" id="BKa-XQ-Rlp"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="FoodPin" id="A6V-H7-2YF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSv-mj-gMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-264.80000000000001" y="38.23088455772114"/>
+            <point key="canvasLocation" x="74.400000000000006" y="38.23088455772114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XxZ-Ob-GEF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UAw-Cf-IKp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XLG-KL-OwO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Aed-wF-02k" kind="relationship" relationship="rootViewController" id="6iH-jH-jDa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNr-Vt-Ruv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="46"/>
         </scene>
     </scenes>
     <resources>
-        <image name="barrafina" width="480" height="480"/>
+        <image name="cafedeadend" width="480" height="480"/>
         <image name="heart-tick" width="22" height="21"/>
+        <image name="more" width="16" height="16"/>
     </resources>
 </document>
