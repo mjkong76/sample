@@ -10,7 +10,7 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
-    let restaurants = DummyRestaurant().restaurants
+    var restaurants = DummyRestaurant().restaurants
     var dictionary: [Int: IndexPath] = [:]
 
     override func viewDidLoad() {
@@ -100,6 +100,8 @@ class RestaurantTableViewController: UITableViewController {
             title: "Delete",
             style: .default,
             handler: { (action: UIAlertAction) in
+                self.restaurants.remove(at: button.tag)
+                self.tableView.deleteRows(at: [self.dictionary[button.tag]!], with: .fade)
         }))
         
         // add share action
