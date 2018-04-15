@@ -32,25 +32,12 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l4J-dC-Nab">
                                                     <rect key="frame" x="0.0" y="0.0" width="365" height="37.5"/>
                                                     <subviews>
-<<<<<<< HEAD
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGd-7g-4MC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="296.5" height="30"/>
-=======
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cafe Deadend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M50-KS-DYr">
                                                             <rect key="frame" x="0.0" y="0.0" width="330" height="37.5"/>
->>>>>>> Chapter11
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-<<<<<<< HEAD
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MI-NB-5if">
-                                                            <rect key="frame" x="301.5" y="0.0" width="33.5" height="30"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-=======
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJT-i7-GvT">
                                                             <rect key="frame" x="340" y="0.0" width="25" height="37.5"/>
                                                             <constraints>
@@ -61,7 +48,6 @@
                                                                 <action selector="moreAction:" destination="Aed-wF-02k" eventType="touchUpInside" id="5E4-A7-L9J"/>
                                                             </connections>
                                                         </button>
->>>>>>> Chapter11
                                                     </subviews>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafedeadend" translatesAutoresizingMaskIntoConstraints="NO" id="tcW-GJ-AmR">
@@ -73,16 +59,6 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ofj-gT-c6b">
                                                     <rect key="frame" x="0.0" y="297.5" width="365" height="62"/>
                                                     <subviews>
-<<<<<<< HEAD
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-iR-VmN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="315" height="18"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-e2-PRO">
-                                                            <rect key="frame" x="315" y="0.0" width="20" height="20"/>
-=======
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-qh-Awx">
                                                             <rect key="frame" x="0.0" y="0.0" width="332" height="62"/>
                                                             <subviews>
@@ -99,7 +75,6 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
->>>>>>> Chapter11
                                                             <constraints>
                                                                 <constraint firstItem="rhC-uj-nXk" firstAttribute="width" secondItem="MOJ-tO-9Ol" secondAttribute="width" id="CGq-xg-umJ"/>
                                                                 <constraint firstItem="MOJ-tO-9Ol" firstAttribute="width" secondItem="Th9-qh-Awx" secondAttribute="width" id="KlL-LS-qUJ"/>
@@ -127,20 +102,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-<<<<<<< HEAD
-                                    <outlet property="food" destination="4QB-x7-2og" id="DqM-e3-UYC"/>
-                                    <outlet property="heart" destination="NyZ-e2-PRO" id="ESA-3q-yU9"/>
-                                    <outlet property="location" destination="Rmb-iR-VmN" id="bph-sr-Um2"/>
-                                    <outlet property="name" destination="oGd-7g-4MC" id="HCR-Lh-IvQ"/>
-                                    <outlet property="type" destination="5MI-NB-5if" id="7bP-tn-RJi"/>
-=======
                                     <outlet property="food" destination="tcW-GJ-AmR" id="gab-R0-lBF"/>
                                     <outlet property="heart" destination="4hL-RH-jJt" id="KgO-0N-WlI"/>
                                     <outlet property="location" destination="MOJ-tO-9Ol" id="thV-gz-fQr"/>
                                     <outlet property="more" destination="HJT-i7-GvT" id="2w0-Cx-lq0"/>
                                     <outlet property="name" destination="M50-KS-DYr" id="xcV-qH-tsu"/>
                                     <outlet property="type" destination="rhC-uj-nXk" id="UqR-Qf-2pr"/>
->>>>>>> Chapter11
                                 </connections>
                             </tableViewCell>
                         </prototypes>
