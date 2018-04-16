@@ -122,4 +122,13 @@ class RestaurantTableViewController: UITableViewController {
         // display menu
         present(optionMenu, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantInformation = restaurants[indexPath.row]
+            }
+        }
+    }
 }
