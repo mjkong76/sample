@@ -17,22 +17,29 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        navigationItem.largeTitleDisplayMode = .never
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.contentInsetAdjustmentBehavior = .never
 
-        if #available(iOS 11, *) {
-            navigationController?.navigationBar.prefersLargeTitles = false
-        }
+        /**
+         To make the navigation bar transparent,
+         all you need to do is set the background image and shadow image to a blank image (i.e. UIImage())
+         */
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.hidesBarsOnSwipe = false
 
-        headerView.headerImageView.image = UIImage.init(named: (restaurantInformation?.image)!)
+        headerView.headerImageView.image = UIImage(named: (restaurantInformation?.image)!)
         headerView.nameLabel.text = restaurantInformation?.name
         headerView.typeLabel.text = restaurantInformation?.type
         if (restaurantInformation?.isVisited)! {
-            headerView.heartImageView.image = UIImage(named:"heart-tick")
-        } else {
-            headerView.heartImageView.image = nil
+            headerView.heartImageView.image = UIImage(named:"heart-tick")?.withRenderingMode(.alwaysTemplate)
+            headerView.heartImageView.tintColor = .white
         }
     }
 
@@ -73,15 +80,4 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             fatalError("Failed to instantiate the table view cell for detail view controller")
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
