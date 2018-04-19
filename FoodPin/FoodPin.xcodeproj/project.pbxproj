@@ -28,6 +28,8 @@
 		2D84F950207904E000CE0E7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D84F94F207904E000CE0E7F /* Assets.xcassets */; };
 		2D84F953207904E000CE0E7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D84F951207904E000CE0E7F /* LaunchScreen.storyboard */; };
 		2D84F95B207906EB00CE0E7F /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84F95A207906EB00CE0E7F /* Restaurant.swift */; };
+		2DDCA6532088A38400CBF29E /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDCA6522088A38400CBF29E /* UIColor+Ext.swift */; };
+		2DDCA6552088A7BB00CBF29E /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDCA6542088A7BB00CBF29E /* UINavigationController+Ext.swift */; };
 		2DEC24CA207A399600FA6E6E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC24C9207A399600FA6E6E /* RestaurantTableViewController.swift */; };
 		2DEC24CC207A606300FA6E6E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC24CB207A606300FA6E6E /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		2D84F952207904E000CE0E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D84F954207904E000CE0E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D84F95A207906EB00CE0E7F /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		2DDCA6522088A38400CBF29E /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		2DDCA6542088A7BB00CBF29E /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		2DEC24C9207A399600FA6E6E /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		2DEC24CB207A606300FA6E6E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				2DDAD60820874B0A00FE8AF6 /* Storyboard */,
+				2DDCA6512088A36000CBF29E /* Extensions */,
 				2D3769192083419E00DAFB5E /* Resources */,
 				2DEE721E2081122400CF382E /* Controller */,
 				2DEE721D2081121200CF382E /* View */,
@@ -136,6 +141,15 @@
 				2D84F951207904E000CE0E7F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		2DDCA6512088A36000CBF29E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2DDCA6522088A38400CBF29E /* UIColor+Ext.swift */,
+				2DDCA6542088A7BB00CBF29E /* UINavigationController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2DEE721C208111FF00CF382E /* Model */ = {
@@ -256,6 +270,8 @@
 				2D3769552084CABD00DAFB5E /* RestaurantDetailHeaderView.swift in Sources */,
 				2D84F95B207906EB00CE0E7F /* Restaurant.swift in Sources */,
 				2D37695920860E0A00DAFB5E /* RestaurantDetailIconTextCell.swift in Sources */,
+				2DDCA6552088A7BB00CBF29E /* UINavigationController+Ext.swift in Sources */,
+				2DDCA6532088A38400CBF29E /* UIColor+Ext.swift in Sources */,
 				2D3769572084CBD400DAFB5E /* RestaurantDetailViewController.swift in Sources */,
 				2DEC24CA207A399600FA6E6E /* RestaurantTableViewController.swift in Sources */,
 			);

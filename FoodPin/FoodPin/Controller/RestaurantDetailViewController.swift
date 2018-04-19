@@ -32,7 +32,6 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
-        navigationController?.hidesBarsOnSwipe = false
 
         headerView.headerImageView.image = UIImage(named: (restaurantInformation?.image)!)
         headerView.nameLabel.text = restaurantInformation?.name
@@ -41,6 +40,17 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             headerView.heartImageView.image = UIImage(named:"heart-tick")?.withRenderingMode(.alwaysTemplate)
             headerView.heartImageView.tintColor = .white
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func didReceiveMemoryWarning() {

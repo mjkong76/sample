@@ -26,7 +26,7 @@ class RestaurantTableViewController: UITableViewController {
         if #available(iOS 11, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
             if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
-                let foregroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+                let foregroundColor = UIColor(red: 231, green: 76, blue: 60)
                 navigationController?.navigationBar.largeTitleTextAttributes = [
                     NSAttributedStringKey.foregroundColor: foregroundColor, NSAttributedStringKey.font: customFont
                 ]
@@ -35,6 +35,8 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         navigationController?.hidesBarsOnSwipe = true
     }
 
