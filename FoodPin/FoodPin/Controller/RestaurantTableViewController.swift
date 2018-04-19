@@ -15,9 +15,29 @@ class RestaurantTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        /**
+         To make the navigation bar transparent,
+         all you need to do is set the background image and shadow image to a blank image (i.e. UIImage())
+         */
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.hidesBarsOnSwipe = true
         if #available(iOS 11, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
+                let foregroundColor = UIColor(red: 231, green: 76, blue: 60)
+                navigationController?.navigationBar.largeTitleTextAttributes = [
+                    NSAttributedStringKey.foregroundColor: foregroundColor, NSAttributedStringKey.font: customFont
+                ]
+            }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.hidesBarsOnSwipe = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,5 +141,14 @@ class RestaurantTableViewController: UITableViewController {
         
         // display menu
         present(optionMenu, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantInformation = restaurants[indexPath.row]
+            }
+        }
     }
 }
