@@ -15,7 +15,9 @@ class RestaurantTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.cellLayoutMarginsFollowReadableWidth = true
+        
         /**
          To make the navigation bar transparent,
          all you need to do is set the background image and shadow image to a blank image (i.e. UIImage())
@@ -68,10 +70,6 @@ class RestaurantTableViewController: UITableViewController {
         dictionary[indexPath.row] = indexPath
         
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func moreAction(_ sender: Any) {
