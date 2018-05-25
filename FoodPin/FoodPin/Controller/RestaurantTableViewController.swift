@@ -7,11 +7,67 @@
 //
 
 import UIKit
+import UserNotifications
 
 class RestaurantTableViewController: UITableViewController {
     
     var restaurants = DummyRestaurant().restaurants
     var dictionary: [Int: IndexPath] = [:]
+	
+	fileprivate func prepareNotification() {
+		
+		if restaurants.count <= 0 {
+			return
+		}
+		
+		let randomNum = Int(arc4random_uniform(UInt32(restaurants.count)))
+		let suggestedRestaurant = restaurants[randomNum]
+		
+		// create the user notification
+		let content = UNMutableNotificationContent()
+		content.title = "Restaurant Recommendation"
+		content.subtitle = "Try new food today"
+		content.body = "I recommend you to check out \(suggestedRestaurant.name). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location). Would you like to give it a try?"
+		content.sound = UNNotificationSound.default()
+		
+		let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+		let tempFileURL = tempDirURL.appendingPathComponent("suggested-restaurant.jpg")
+		
+		if let image = UIImage.init(named: suggestedRestaurant.image) {
+			
+			try? UIImageJPEGRepresentation(image, 1.0)?.write(to: tempFileURL)
+			if let restaurantImage = try? UNNotificationAttachment(identifier: "restaurantImage", url: tempFileURL, options: nil) {
+				content.attachments = [restaurantImage]
+			}
+		}
+		
+		let cancelAction = UNNotificationAction(identifier: "foodpin.cancel",
+												title: "Later", options: [])
+		let makeReservationAction = UNNotificationAction(identifier: "foodpin.makeReservation",
+														 title: "Reserve a table", options: [.foreground])
+		
+		// give the category a unique identifer and pass the action objects to associate with the category
+		//
+		let category = UNNotificationCategory(identifier: "foodpin.restaurantaction",
+											  actions: [makeReservationAction, cancelAction],
+											  intentIdentifiers: [], options: [])
+		
+		// register
+		//
+		UNUserNotificationCenter.current().setNotificationCategories([category])
+		
+		// must be set the category identifier to the categoryIdentifier property of the notification content
+		content.categoryIdentifier = "foodpin.restaurantaction"
+		
+		content.userInfo = [ "phone": suggestedRestaurant.phone ]
+		
+		// trigger
+		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+		let request = UNNotificationRequest(identifier: "foodpin.restaurantSuggestion", content: content, trigger: trigger)
+		
+		// schedule the notification
+		UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +90,8 @@ class RestaurantTableViewController: UITableViewController {
                 ]
             }
         }
+		
+		prepareNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
         
         UIApplication.shared.statusBarStyle = .lightContent
+		
+		///
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+		}
+		
+		UNUserNotificationCenter.current().delegate = self
         
         return true
     }
@@ -46,6 +53,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+	
+	func userNotificationCenter(_ center: UNUserNotificationCenter,
+								didReceive response: UNNotificationResponse,
+								withCompletionHandler completionHandler: @escaping ()->Void) {
+		
+		if response.actionIdentifier == "foodpin.makeReservation" {
+			
+			if let phone = response.notification.request.content.userInfo["phone"] {
+				
+				/*
+				* In iOS, you can launch some of the system apps using an appropriate URL.
+				*/
+				let telURL = "tel://\(phone)"
+				if let url = URL(string: telURL) {
+					if UIApplication.shared.canOpenURL(url) {
+						UIApplication.shared.open(url)
+					}
+				}
+			}
+		}
+		completionHandler()
+	}
+}
